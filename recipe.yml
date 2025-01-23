@@ -29,7 +29,7 @@ input:
       value: 'field_tags'
 config:
   actions:
-    field.storage.node.ai_automator_status.yml:
+    field.storage.node.ai_automator_status:
       createIfNotExists:
         langcode: en
         status: true
