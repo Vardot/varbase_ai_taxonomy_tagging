@@ -28,6 +28,7 @@ input:
       source: value
       value: 'field_tags'
 config:
+  strict: false
   actions:
     field.storage.node.ai_automator_status:
       createIfNotExists:
