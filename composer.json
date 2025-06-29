@@ -13,6 +13,6 @@
   ],
   "require": {
     "drupal/core": "~10 || ~11",
-    "drupal/ai": "~1"
+    "drupal/ai": "~1.1.0"
   }
 }
