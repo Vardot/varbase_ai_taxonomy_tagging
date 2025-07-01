@@ -15,5 +15,5 @@
     "drupal/core": "~10 || ~11",
     "drupal/ai": "~1.1.0"
   },
-  "version": "1.0.1"
+  "version": "1.0.x-dev"
 }
