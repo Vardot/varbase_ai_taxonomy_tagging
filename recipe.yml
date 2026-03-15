@@ -71,14 +71,14 @@ config:
         bundle: ${content_type}
         field_name: ${field_name}
         edit_mode: false
-        base_field: body
+        base_field: content
         prompt: "Based on the context text choose up to {{ max_amount }} keyword tags from the tag context that fits the text.\r\n\r\nTag options:\r\n{{ value_options_comma }}\r\n\r\nContext:\r\n{{ context }}"
         token: ""
         plugin_config:
           automator_enabled: 1
           automator_rule: llm_taxonomy
           automator_mode: base
-          automator_base_field: body
+          automator_base_field: content
           automator_prompt: "Based on the context text choose up to {{ max_amount }} keyword tags from the tag context that fits the text.\r\n\r\nTag options:\r\n{{ value_options_comma }}\r\n\r\nContext:\r\n{{ context }}"
           automator_token: ""
           automator_edit_mode: 0
