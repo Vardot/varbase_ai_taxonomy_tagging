@@ -1,24 +1,24 @@
 # Varbase AI Taxonomy Tagging
 
-Provides a recipe to automatically tag selected referenced taxonomy terms based on the content entity's body field.
+This recipe enables AI-powered taxonomy tagging for content and ensures that Varbase editorial roles have the required permissions to use AI tagging features provided by the Drupal CMS AI default recipe.
 
-> Apply the Varbase AI Default recipe, or make sure it has been applied before applying this recipe.
+> Apply the Drupal CMS AI default recipe, or make sure it has been applied before applying this recipe.
 
 Add the recipe using composer:
 ```
-composer require drupal/varbase_ai_taxonomy_tagging:~1.0.0
+composer require drupal/varbase_ai_taxonomy_tagging:~2.0.0
 ```
 
 Change directory to `/web` or `/docroot`
 
 Run the Drupal recipe bash script:
 ```
-bash core/scripts/drupal recipe recipes/contrib/varbase_ai_taxonomy_tagging
+bash core/scripts/drupal recipe ../recipes/varbase_ai_taxonomy_tagging
 ```
 
-or 
+or
 
 Run the Drush recipe command:
 ```
-drush recipe recipes/contrib/varbase_ai_taxonomy_tagging
+drush recipe ../recipes/varbase_ai_taxonomy_tagging
 ```

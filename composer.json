@@ -1,6 +1,6 @@
 {
   "name": "drupal/varbase_ai_taxonomy_tagging",
-  "description": "Provides a recipe to automatically tag selected referenced taxonomy terms based on the content entity's body field.",
+  "description": "Enables AI-powered taxonomy tagging for content and grants Varbase editorial roles the required permissions to use AI tagging features provided by the Drupal CMS AI default recipe.",
   "keywords": ["recipe", "Varbase recipes", "varbase recipe", "Drupal recipes", "drupal recipe", "Taxonomy", "tags", "Tagging"],
   "type": "drupal-recipe",
   "license": "GPL-2.0-or-later",
@@ -12,8 +12,8 @@
     }
   ],
   "require": {
-    "drupal/core": "~10 || ~11",
-    "drupal/ai": "~1.1.0"
+    "drupal/core": "~11.3.0",
+    "drupal/drupal_cms_ai": "~2"
   },
-  "version": "1.0.x-dev"
+  "version": "2.0.x-dev"
 }

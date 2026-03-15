@@ -1,5 +1,5 @@
 name: Varbase AI Taxonomy Tagging
-description: Provides a recipe to automatically tag selected referenced taxonomy terms based on the content entity's body field.
+description: Enables AI-powered taxonomy tagging for content and grants Varbase editorial roles the required permissions to use AI tagging features provided by the Drupal CMS AI default recipe.
 type: Varbase AI
 install:
   - node
@@ -16,7 +16,7 @@ input:
         question: 'Content Type:'
     default:
       source: value
-      value: 'varbase_blog'
+      value: 'blog'
   field_name:
     data_type: string
     description: Filed name
