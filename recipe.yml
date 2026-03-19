@@ -9,24 +9,52 @@ install:
 input:
   content_type:
     data_type: string
-    description: Content Type
+    description: Content Type machine name to enable AI taxonomy tagging on.
     prompt:
       method: ask
       arguments:
         question: 'Content Type:'
+    form:
+      '#type': 'textfield'
+      '#title': 'Content type machine name'
+      '#description': 'Enter the machine name of the content type to enable AI taxonomy tagging on (e.g. blog, article, page).'
+      '#required': false
+      '#maxlength': 64
     default:
       source: value
       value: 'blog'
   field_name:
     data_type: string
-    description: Filed name
+    description: Taxonomy field machine name to use for AI tagging.
     prompt:
       method: ask
       arguments:
-        question: 'Filed name:'
+        question: 'Field name:'
+    form:
+      '#type': 'textfield'
+      '#title': 'Taxonomy field machine name'
+      '#description': 'Enter the machine name of the taxonomy reference field to populate with AI-generated tags (e.g. field_tags, field_category).'
+      '#required': false
+      '#maxlength': 64
     default:
       source: value
       value: 'field_tags'
+  base_field:
+    data_type: string
+    description: The base content field machine name to use as source for AI tag generation.
+    prompt:
+      method: ask
+      arguments:
+        question: 'Base content field machine name (e.g. body, field_content):'
+    form:
+      '#type': 'textfield'
+      '#title': 'Base content field machine name'
+      '#description': 'Enter the machine name of the content field to use as input for AI tag generation (e.g. body, field_content).'
+      '#required': false
+      '#maxlength': 64
+    default:
+      source: value
+      value: 'field_content'
 config:
   strict: false
   actions:
@@ -47,13 +75,19 @@ config:
         bundle: ${content_type}
         label: 'AI Automator Status'
         description: ''
-        required: true
+        required: false
         translatable: true
         default_value:
-          - pending
+          -
+            value: pending
         default_value_callback: ''
         settings: {  }
         field_type: list_string
+    field.field.node.${content_type}.${field_name}:
+      setEntityReferenceHandler:
+        handler: 'default:taxonomy_term'
+    core.entity_form_display.node.${content_type}.default:
+      'entity_method:core.entity_form_display:hideComponent': ai_automator_status
     ai_automators.ai_automator.node.${content_type}.${field_name}.default:
       createIfNotExists:
         langcode: en
@@ -71,14 +105,14 @@ config:
         bundle: ${content_type}
         field_name: ${field_name}
         edit_mode: false
-        base_field: content
+        base_field: ${base_field}
         prompt: "Based on the context text choose up to {{ max_amount }} keyword tags from the tag context that fits the text.\r\n\r\nTag options:\r\n{{ value_options_comma }}\r\n\r\nContext:\r\n{{ context }}"
         token: ""
         plugin_config:
           automator_enabled: 1
           automator_rule: llm_taxonomy
           automator_mode: base
-          automator_base_field: content
+          automator_base_field: ${base_field}
           automator_prompt: "Based on the context text choose up to {{ max_amount }} keyword tags from the tag context that fits the text.\r\n\r\nTag options:\r\n{{ value_options_comma }}\r\n\r\nContext:\r\n{{ context }}"
           automator_token: ""
           automator_edit_mode: 0
