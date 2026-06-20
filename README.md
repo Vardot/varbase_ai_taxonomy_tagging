@@ -1,3 +1,5 @@
+[![Varbase](https://raw.githubusercontent.com/Vardot/varbase/11.0.x/images/varbase-logo.png)](https://www.drupal.org/project/varbase)
+
 # Varbase AI Taxonomy Tagging
 
 This recipe enables AI-powered taxonomy tagging for content and ensures that Varbase editorial roles have the required permissions to use AI tagging features provided by the Drupal CMS AI default recipe.
