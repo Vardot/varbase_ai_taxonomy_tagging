@@ -58,36 +58,8 @@ input:
 config:
   strict: false
   actions:
-    field.storage.node.ai_automator_status:
-      createIfNotExists:
-        langcode: en
-        status: true
-        id: node.ai_automator_status
-        field_name: ai_automator_status
-        entity_type: node
-        type: list_string
-    field.field.node.${content_type}.ai_automator_status:
-      createIfNotExists:
-        status: true
-        id: node.${content_type}.ai_automator_status
-        field_name: ai_automator_status
-        entity_type: node
-        bundle: ${content_type}
-        label: 'AI Automator Status'
-        description: ''
-        required: false
-        translatable: true
-        default_value:
-          -
-            value: pending
-        default_value_callback: ''
-        settings: {  }
-        field_type: list_string
-    field.field.node.${content_type}.${field_name}:
-      setEntityReferenceHandler:
-        handler: 'default:taxonomy_term'
-    core.entity_form_display.node.${content_type}.default:
-      'entity_method:core.entity_form_display:hideComponent': ai_automator_status
+    # Must come first: ai_automators deletes the ai_automator_status field on
+    # insert while no automator exists for the bundle yet. See #3610806.
     ai_automators.ai_automator.node.${content_type}.${field_name}.default:
       createIfNotExists:
         langcode: en
@@ -122,3 +94,33 @@ config:
           automator_ai_provider: default_json
           automator_clean_up: ''
           automator_search_similar_tags: 0
+    field.storage.node.ai_automator_status:
+      createIfNotExists:
+        langcode: en
+        status: true
+        id: node.ai_automator_status
+        field_name: ai_automator_status
+        entity_type: node
+        type: list_string
+    field.field.node.${content_type}.ai_automator_status:
+      createIfNotExists:
+        status: true
+        id: node.${content_type}.ai_automator_status
+        field_name: ai_automator_status
+        entity_type: node
+        bundle: ${content_type}
+        label: 'AI Automator Status'
+        description: ''
+        required: false
+        translatable: true
+        default_value:
+          -
+            value: pending
+        default_value_callback: ''
+        settings: {  }
+        field_type: list_string
+    field.field.node.${content_type}.${field_name}:
+      setEntityReferenceHandler:
+        handler: 'default:taxonomy_term'
+    core.entity_form_display.node.${content_type}.default:
+      'entity_method:core.entity_form_display:hideComponent': ai_automator_status
