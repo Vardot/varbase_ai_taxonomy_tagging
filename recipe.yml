@@ -3,6 +3,7 @@ description: Enables AI-powered taxonomy tagging for content and grants Varbase 
 type: Varbase AI
 install:
   - node
+  - field
   - taxonomy
   - ai
   - ai_automators
