@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.0] - 2026-09-06
+### Changed
+- First stable release of the Varbase AI Taxonomy Tagging recipe on the 2.0.x line, shipped with the Varbase 11.0.0 suite. No functional changes since 2.0.0-rc2.
+- Update the version badge to `2.0.0` in `README.md`.
+
 ## [2.0.0-rc2] - 2026-08-16
 ### Fixed
 - Add the core Field module to the recipe `install` list. Without it the recipe failed validation on the `field.storage.node.ai_automator_status`, `field.field.node.${content_type}.ai_automator_status` and `field.field.node.${content_type}.${field_name}` config actions, because the field extension was neither installed nor installed by this recipe or its dependencies. See [#3617217](https://www.drupal.org/i/3617217).
@@ -37,7 +42,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial 2.0.x release of the Varbase AI Taxonomy Tagging recipe.
 
-[Unreleased]: https://git.drupalcode.org/project/varbase_ai_taxonomy_tagging/-/compare/2.0.0-rc2...2.0.x
+[Unreleased]: https://git.drupalcode.org/project/varbase_ai_taxonomy_tagging/-/compare/2.0.0...2.0.x
+[2.0.0]: https://git.drupalcode.org/project/varbase_ai_taxonomy_tagging/-/compare/2.0.0-rc2...2.0.0
 [2.0.0-rc2]: https://git.drupalcode.org/project/varbase_ai_taxonomy_tagging/-/compare/2.0.0-rc1...2.0.0-rc2
 [2.0.0-rc1]: https://git.drupalcode.org/project/varbase_ai_taxonomy_tagging/-/compare/2.0.0-beta2...2.0.0-rc1
 [2.0.0-beta2]: https://git.drupalcode.org/project/varbase_ai_taxonomy_tagging/-/compare/2.0.0-beta1...2.0.0-beta2
