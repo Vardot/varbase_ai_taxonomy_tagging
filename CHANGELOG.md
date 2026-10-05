@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [2.0.1] - 2026-10-05
 ### Added
 - Add a **Suggest tags** button beside the Tagify tags field, so editors see the suggested tags in the content form before saving. Applying the recipe again does not add a second button. Needs `drupal/ai` 1.5.0 or later. See [#3628617](https://www.drupal.org/i/3628617).
 - Document how to tag several content types with one shared vocabulary: apply the recipe once per content type with the same taxonomy field.
@@ -13,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Require `drupal/ai` `^1.5` and `drupal/field_widget_actions` `^1.4`, and install the Field Widget Actions module.
 - Explain in the `content_type` input help that the recipe tags one content type per run.
+- Update the version badge to `2.0.1` in `README.md`.
 
 ### Fixed
 - Stop the run before anything is created when the content type or the taxonomy field does not exist. Before, the automator was saved for the missing content type and stayed behind. See [#3628617](https://www.drupal.org/i/3628617).
@@ -52,7 +55,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial 2.0.x release of the Varbase AI Taxonomy Tagging recipe.
 
-[Unreleased]: https://git.drupalcode.org/project/varbase_ai_taxonomy_tagging/-/compare/2.0.0...2.0.x
+[Unreleased]: https://git.drupalcode.org/project/varbase_ai_taxonomy_tagging/-/compare/2.0.1...2.0.x
+[2.0.1]: https://git.drupalcode.org/project/varbase_ai_taxonomy_tagging/-/compare/2.0.0...2.0.1
 [2.0.0]: https://git.drupalcode.org/project/varbase_ai_taxonomy_tagging/-/compare/2.0.0-rc2...2.0.0
 [2.0.0-rc2]: https://git.drupalcode.org/project/varbase_ai_taxonomy_tagging/-/compare/2.0.0-rc1...2.0.0-rc2
 [2.0.0-rc1]: https://git.drupalcode.org/project/varbase_ai_taxonomy_tagging/-/compare/2.0.0-beta2...2.0.0-rc1
