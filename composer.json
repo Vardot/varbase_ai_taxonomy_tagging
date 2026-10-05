@@ -12,8 +12,10 @@
     }
   ],
   "require": {
+    "drupal/ai": "^1.5",
     "drupal/core": "~11.4.0",
-    "drupal/drupal_cms_ai": "~2"
+    "drupal/drupal_cms_ai": "~2",
+    "drupal/field_widget_actions": "^1.4"
   },
   "version": "2.0.x-dev"
 }

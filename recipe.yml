@@ -7,6 +7,7 @@ install:
   - taxonomy
   - ai
   - ai_automators
+  - field_widget_actions
 input:
   content_type:
     data_type: string
@@ -18,7 +19,7 @@ input:
     form:
       '#type': 'textfield'
       '#title': 'Content type machine name'
-      '#description': 'Enter the machine name of the content type to enable AI taxonomy tagging on (e.g. blog, article, page).'
+      '#description': 'Enter the machine name of the content type to enable AI taxonomy tagging on (e.g. blog, article, page). One content type per run: apply the recipe again for each additional content type, and give them all the same taxonomy field to share one vocabulary.'
       '#required': false
       '#maxlength': 64
     default:
@@ -59,8 +60,14 @@ input:
 config:
   strict: false
   actions:
-    # Must come first: ai_automators deletes the ai_automator_status field on
-    # insert while no automator exists for the bundle yet. See #3610806.
+    # Must come first: stops the run before anything is created when the
+    # content type or the taxonomy field does not exist. Otherwise the automator
+    # below is saved for a missing bundle and stays behind when the run fails.
+    field.field.node.${content_type}.${field_name}:
+      setEntityReferenceHandler:
+        handler: 'default:taxonomy_term'
+    # Must come before the ai_automator_status field: ai_automators deletes
+    # it on insert while no automator exists for the bundle yet. See #3610806.
     ai_automators.ai_automator.node.${content_type}.${field_name}.default:
       createIfNotExists:
         langcode: en
@@ -120,8 +127,22 @@ config:
         default_value_callback: ''
         settings: {  }
         field_type: list_string
-    field.field.node.${content_type}.${field_name}:
-      setEntityReferenceHandler:
-        handler: 'default:taxonomy_term'
     core.entity_form_display.node.${content_type}.default:
       'entity_method:core.entity_form_display:hideComponent': ai_automator_status
+      # Adds the "Suggest tags" button beside the Tagify widget. It runs the
+      # automator above and fills the tags in the form, before the content is
+      # saved. Needs drupal/ai 1.5.0 or later, see #3536912.
+      # The key must be a fixed, valid UUID: Field Widget Actions gives any
+      # other key a new UUID on every save, and applying the recipe again would
+      # add a second button instead of updating this one.
+      setComponentThirdPartySetting:
+        component: ${field_name}
+        provider: field_widget_actions
+        settings:
+          b085cb1e-5475-4003-8e02-19656a8c4ac4:
+            plugin_id: automator_tagify_taxonomy
+            enabled: true
+            button_label: 'Suggest tags'
+            weight: 0
+            settings:
+              automator_id: node.${content_type}.${field_name}.default

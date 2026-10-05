@@ -6,6 +6,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+- Add a **Suggest tags** button beside the Tagify tags field, so editors see the suggested tags in the content form before saving. Applying the recipe again does not add a second button. Needs `drupal/ai` 1.5.0 or later. See [#3628617](https://www.drupal.org/i/3628617).
+- Document how to tag several content types with one shared vocabulary: apply the recipe once per content type with the same taxonomy field.
+
+### Changed
+- Require `drupal/ai` `^1.5` and `drupal/field_widget_actions` `^1.4`, and install the Field Widget Actions module.
+- Explain in the `content_type` input help that the recipe tags one content type per run.
+
+### Fixed
+- Stop the run before anything is created when the content type or the taxonomy field does not exist. Before, the automator was saved for the missing content type and stayed behind. See [#3628617](https://www.drupal.org/i/3628617).
 
 ## [2.0.0] - 2026-09-06
 ### Changed
