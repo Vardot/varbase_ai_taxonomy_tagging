@@ -10,7 +10,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.2] - 2026-10-11
 ### Changed
 - Add the default `.gitlab` and `.github` issue and merge request templates. See [#3614571](https://www.drupal.org/i/3614571).
+- Add GitLab CI: composer, composer lint, PHPCS, CSpell, YAML lint, and a job that applies Varbase AI Default and then this recipe on Drupal 11.4. See [#3630065](https://www.drupal.org/i/3630065).
 - Set the recipe version to `1.0.2`.
+
+### Fixed
+- Create the AI automator before the AI Automator Status field, and give that field its default value in the List (text) shape, so the recipe applies on Drupal 11.4. See [#3630072](https://www.drupal.org/i/3630072).
 
 ## [1.0.1] - 2025-07-01
 ### Changed
