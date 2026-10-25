@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- Move the documentation to docs.varbase.vardot.com ([#3633020](https://www.drupal.org/i/3633020)).
+
 ## [2.0.1] - 2026-10-05
 ### Added
 - Add a **Suggest tags** button beside the Tagify tags field, so editors see the suggested tags in the content form before saving. Applying the recipe again does not add a second button. Needs `drupal/ai` 1.5.0 or later. See [#3628617](https://www.drupal.org/i/3628617).
