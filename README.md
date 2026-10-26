@@ -46,3 +46,8 @@ for content_type in blog page; do
 done
 ```
 
+## Automated testing
+
+GitLab CI on [git.drupalcode.org](https://git.drupalcode.org/project/varbase_ai_taxonomy_tagging) (`.gitlab-ci.yml`) builds
+a Varbase 11 site, applies this recipe twice and runs the Varbase functional testing suite in `tests/` on it. See
+[tests/README.md](tests/README.md) to run it against a site of your own.

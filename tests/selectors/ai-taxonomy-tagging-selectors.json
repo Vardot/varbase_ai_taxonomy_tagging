@@ -1,0 +1,9 @@
+{
+  "css": {
+    "suggest tags button": "button:has-text('Suggest tags'), input[value='Suggest tags']",
+    "open source tag": "tags.tagify tag[title='Open source'], tags.tagify tag[value='Open source']"
+  },
+  "xpath": {
+    "second suggest tags button": "(//button[normalize-space()='Suggest tags'] | //input[@value='Suggest tags'])[2]"
+  }
+}
