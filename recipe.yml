@@ -24,7 +24,7 @@ input:
       '#maxlength': 64
     default:
       source: value
-      value: 'blog'
+      value: 'page'
   field_name:
     data_type: string
     description: Taxonomy field machine name to use for AI tagging.

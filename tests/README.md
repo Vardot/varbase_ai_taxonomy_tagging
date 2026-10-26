@@ -5,8 +5,8 @@ Varbase 11 site with this recipe applied.
 
 | Feature | Covers |
 | --- | --- |
-| `01-01-ai-taxonomy-tagging-suggest.feature` | Each editorial role gets one Suggest tags button; Suggest tags picks a tag from the vocabulary; a post saved without tags is tagged by AI |
-| `01-02-ai-taxonomy-tagging-accessibility.feature` | The blog form keeps the label, link name and ARIA rules |
+| `01-01-ai-taxonomy-tagging-suggest.feature` | Each editorial role gets one Suggest tags button; Suggest tags picks a tag from the vocabulary; a page saved without tags is tagged by AI |
+| `01-02-ai-taxonomy-tagging-accessibility.feature` | The page form keeps the label, link name and ARIA rules |
 
 The Suggest tags elements are named selectors in `tests/selectors/ai-taxonomy-tagging-selectors.json`.
 
@@ -26,5 +26,5 @@ The site needs the webmaster (`webmaster`) and one user per role, named after th
 CI applies Drupal CMS AI before the recipe. It sets up an amazee.ai trial as the default provider, so no key
 is needed and tags are suggested and written by a real model.
 
-The blog form is held to pinned accessibility rules rather than the full serious gate: the admin theme's help
+The page form is held to pinned accessibility rules rather than the full serious gate: the admin theme's help
 toggles and CKEditor's toolbar menu items fail it, which comes from the theme and the editor, not this recipe.
