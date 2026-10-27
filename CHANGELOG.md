@@ -7,8 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.2] - 2026-10-27
+### Added
+- Automated functional acceptance tests for tag suggestions and accessibility, run in CI on a fresh Varbase 11 site ([#3633127](https://www.drupal.org/i/3633127)).
+
 ### Changed
 - Move the documentation to docs.varbase.vardot.com ([#3633020](https://www.drupal.org/i/3633020)).
+- Install the Varbase Starter dev line in CI, which carries the search view fix for Drupal CMS Search 2.2.7.
+- Update the version badge to `2.0.2` in `README.md`.
+
+### Fixed
+- Default the content type to page so Varbase AI Base applies on every site template ([#3633116](https://www.drupal.org/i/3633116)).
 
 ## [2.0.1] - 2026-10-05
 ### Added
@@ -58,7 +67,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial 2.0.x release of the Varbase AI Taxonomy Tagging recipe.
 
-[Unreleased]: https://git.drupalcode.org/project/varbase_ai_taxonomy_tagging/-/compare/2.0.1...2.0.x
+[Unreleased]: https://git.drupalcode.org/project/varbase_ai_taxonomy_tagging/-/compare/2.0.2...2.0.x
+[2.0.2]: https://git.drupalcode.org/project/varbase_ai_taxonomy_tagging/-/compare/2.0.1...2.0.2
 [2.0.1]: https://git.drupalcode.org/project/varbase_ai_taxonomy_tagging/-/compare/2.0.0...2.0.1
 [2.0.0]: https://git.drupalcode.org/project/varbase_ai_taxonomy_tagging/-/compare/2.0.0-rc2...2.0.0
 [2.0.0-rc2]: https://git.drupalcode.org/project/varbase_ai_taxonomy_tagging/-/compare/2.0.0-rc1...2.0.0-rc2
