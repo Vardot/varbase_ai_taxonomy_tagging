@@ -20,31 +20,33 @@ Feature: Varbase AI Recipe - AI Taxonomy Tagging - Suggest tags while writing a 
       | Site admin     |
 
   Scenario: Verify Suggest tags picks a matching tag from the vocabulary
+    CI has no real RAG or vector database hosting: it uses only what the pipeline has and the free amazee.ai
+    trial from Drupal CMS AI (thanks to amazee.ai). A short answer comes back within 10 seconds.
     Given I am a logged in user with the "Webmaster" user
      When I go to "/admin/structure/taxonomy/manage/tags/add"
       And I fill in "Name" with "Open source"
-      And I press "Save"
+      And I click the "Save" button
       And I logout
     Given I am a logged in user with the "Content editor" user
      When I go to "/node/add/page"
       And I fill in "Title" with "Why we publish our code"
       And I fill in the rich text editor field "Content" with "We share all our modules as open source software under the GPL, so anyone can read, change and reuse them."
       And I click "Suggest tags"
-      And I wait max of 60 seconds
+      And I wait max of 10 seconds
      Then I see visible open source tag
 
   Scenario: Verify a page saved without tags is tagged by AI from the vocabulary
     Given I am a logged in user with the "Webmaster" user
      When I go to "/admin/structure/taxonomy/manage/tags/add"
       And I fill in "Name" with "Accessibility"
-      And I press "Save"
+      And I click the "Save" button
       And I logout
     Given I am a logged in user with the "Content editor" user
      When I go to "/node/add/page"
       And I fill in "Title" with "Making every page usable"
       And I fill in the content field "Description" with "How we build pages that everyone can use."
       And I fill in the rich text editor field "Content" with "We test every page with a screen reader and a keyboard so that people with disabilities can use the site."
-      And I press "Save"
+      And I click the "Save" button
      Then I should see "Making every page usable"
      When I go to "/admin/content"
       And I open the "Edit" link in the "Making every page usable" row
