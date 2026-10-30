@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.3] - 2026-10-29
+### Added
+- Test what users do on amazee.ai from Drupal CMS AI, in plain English, with an accessibility check ([#3633127](https://www.drupal.org/i/3633127)).
+
+### Changed
+- Disable Drupal CMS telemetry in CI ([#3633863](https://www.drupal.org/i/3633863)).
+- Add a Claude Code agent and skill for applying and verifying the recipe ([#3633940](https://www.drupal.org/i/3633940)).
+- Update the version badge to `2.0.3` in `README.md`.
+
 ## [2.0.2] - 2026-10-27
 ### Added
 - Automated functional acceptance tests for tag suggestions and accessibility, run in CI on a fresh Varbase 11 site ([#3633127](https://www.drupal.org/i/3633127)).
@@ -67,7 +76,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial 2.0.x release of the Varbase AI Taxonomy Tagging recipe.
 
-[Unreleased]: https://git.drupalcode.org/project/varbase_ai_taxonomy_tagging/-/compare/2.0.2...2.0.x
+[Unreleased]: https://git.drupalcode.org/project/varbase_ai_taxonomy_tagging/-/compare/2.0.3...2.0.x
+[2.0.3]: https://git.drupalcode.org/project/varbase_ai_taxonomy_tagging/-/compare/2.0.2...2.0.3
 [2.0.2]: https://git.drupalcode.org/project/varbase_ai_taxonomy_tagging/-/compare/2.0.1...2.0.2
 [2.0.1]: https://git.drupalcode.org/project/varbase_ai_taxonomy_tagging/-/compare/2.0.0...2.0.1
 [2.0.0]: https://git.drupalcode.org/project/varbase_ai_taxonomy_tagging/-/compare/2.0.0-rc2...2.0.0
