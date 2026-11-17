@@ -13,6 +13,8 @@ include:
       - '/includes/include.drupalci.workflows.yml'
 
 variables:
+  # PHP 8.5 for the drupalci job images (the template default is PHP 8.3).
+  _TARGET_PHP: "8.5"
   _CURL_TEMPLATES_REF: '1.17.2'
   _ALL_VALIDATE_ALLOW_FAILURE: '0'
   # The verbatim GPL text, not ours to spell-check.
