@@ -19,6 +19,8 @@ Feature: Varbase AI Recipe - AI Taxonomy Tagging - Suggest tags while writing a 
       | SEO admin      |
       | Site admin     |
 
+  # Needs a real model to pick the matching tag; Echo's reply names no tag.
+  @live-ai
   Scenario: Verify Suggest tags picks a matching tag from the vocabulary
     CI has no real RAG or vector database hosting: it uses only what the pipeline has and the free amazee.ai
     trial from Drupal CMS AI (thanks to amazee.ai). A short answer comes back within 10 seconds.
@@ -35,6 +37,8 @@ Feature: Varbase AI Recipe - AI Taxonomy Tagging - Suggest tags while writing a 
       And I wait max of 10 seconds
      Then I see visible open source tag
 
+  # Needs a real model to tag the page on save; Echo's reply names no tag.
+  @live-ai
   Scenario: Verify a page saved without tags is tagged by AI from the vocabulary
     Given I am a logged in user with the "Webmaster" user
      When I go to "/admin/structure/taxonomy/manage/tags/add"
