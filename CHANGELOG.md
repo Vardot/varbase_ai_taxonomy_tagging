@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.3] - 2026-11-23
+### Changed
+- Change the default PHP version to PHP 8.5 in the GitLab CI ([#3638924](https://www.drupal.org/i/3638924)).
+- Set the recipe version to `1.0.3`.
+
 ## [1.0.2] - 2026-10-11
 ### Changed
 - Add the default `.gitlab` and `.github` issue and merge request templates. See [#3614571](https://www.drupal.org/i/3614571).
@@ -26,7 +31,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial release of the Varbase AI Taxonomy Tagging recipe: adds an AI automator that tags a content type from its body, asking for the content type (default `varbase_blog`) and the taxonomy field (default `field_tags`). See [#3501744](https://www.drupal.org/i/3501744).
 
-[Unreleased]: https://git.drupalcode.org/project/varbase_ai_taxonomy_tagging/-/compare/1.0.2...1.0.x
+[Unreleased]: https://git.drupalcode.org/project/varbase_ai_taxonomy_tagging/-/compare/1.0.3...1.0.x
+[1.0.3]: https://git.drupalcode.org/project/varbase_ai_taxonomy_tagging/-/compare/1.0.2...1.0.3
 [1.0.2]: https://git.drupalcode.org/project/varbase_ai_taxonomy_tagging/-/compare/1.0.1...1.0.2
 [1.0.1]: https://git.drupalcode.org/project/varbase_ai_taxonomy_tagging/-/compare/1.0.0...1.0.1
 [1.0.0]: https://git.drupalcode.org/project/varbase_ai_taxonomy_tagging/-/tags/1.0.0
